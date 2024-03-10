@@ -1,0 +1,145 @@
+object MainForm: TMainForm
+  Left = 394
+  Height = 560
+  Top = 234
+  Width = 350
+  Caption = 'AMPasswordGenerator'
+  ClientHeight = 531
+  ClientWidth = 350
+  Menu = MainFormMenu
+  LCLVersion = '2.0.10.0'
+  object GroupNum: TGroupBox
+    Left = 16
+    Height = 128
+    Top = 8
+    Width = 320
+    Caption = 'Количество символов'
+    ClientHeight = 108
+    ClientWidth = 318
+    TabOrder = 0
+    object NumChars: TSpinEdit
+      Left = 16
+      Height = 28
+      Top = 24
+      Width = 282
+      MaxValue = 255
+      MinValue = 1
+      TabOrder = 0
+      Value = 8
+    end
+    object NumChars4: TButton
+      Left = 16
+      Height = 25
+      Top = 65
+      Width = 53
+      Caption = '4'
+      TabOrder = 1
+    end
+    object NumChars8: TButton
+      Left = 128
+      Height = 25
+      Top = 65
+      Width = 53
+      Caption = '8'
+      TabOrder = 2
+    end
+    object NumChars12: TButton
+      Left = 245
+      Height = 25
+      Top = 65
+      Width = 53
+      Caption = '12'
+      TabOrder = 3
+    end
+  end
+  object GroupType: TGroupBox
+    Left = 16
+    Height = 200
+    Top = 160
+    Width = 320
+    Caption = 'Типы символов'
+    ClientHeight = 180
+    ClientWidth = 318
+    TabOrder = 1
+    object TypeCharUp: TCheckBox
+      Left = 16
+      Height = 21
+      Top = 24
+      Width = 187
+      Caption = 'Буквы (верхний регистр)'
+      TabOrder = 0
+    end
+    object TypeCharLow: TCheckBox
+      Left = 16
+      Height = 21
+      Top = 64
+      Width = 184
+      Caption = 'Буквы (нижний регистр)'
+      TabOrder = 1
+    end
+    object TypeDigit: TCheckBox
+      Left = 16
+      Height = 21
+      Top = 101
+      Width = 71
+      Caption = 'Цифры'
+      TabOrder = 2
+    end
+    object TypeSpChar: TCheckBox
+      Left = 16
+      Height = 21
+      Top = 144
+      Width = 177
+      Caption = 'Специальные символы'
+      TabOrder = 3
+    end
+  end
+  object GroupPassword: TGroupBox
+    Left = 16
+    Height = 136
+    Top = 384
+    Width = 320
+    Caption = 'Пароль'
+    ClientHeight = 116
+    ClientWidth = 318
+    TabOrder = 2
+    object PasswordEdit: TEdit
+      Left = 16
+      Height = 30
+      Top = 22
+      Width = 282
+      TabOrder = 0
+      Text = 'Здесь будет Ваш пароль...'
+    end
+    object PasswordButtton: TButton
+      Left = 16
+      Height = 32
+      Top = 64
+      Width = 282
+      Caption = 'Сгенерировать'
+      TabOrder = 1
+    end
+  end
+  object MainFormMenu: TMainMenu
+    Left = 280
+    Top = 304
+    object MenuItemFile: TMenuItem
+      Caption = 'Файл'
+      object MenuItemSettings: TMenuItem
+        Caption = 'Параметры'
+      end
+      object MenuItemSep1: TMenuItem
+        Caption = '-'
+      end
+      object MenuItemExit: TMenuItem
+        Caption = 'Выход'
+      end
+    end
+    object MenuItemInfo: TMenuItem
+      Caption = 'Справка'
+      object MenuItemAbout: TMenuItem
+        Caption = 'О программе'
+      end
+    end
+  end
+end
