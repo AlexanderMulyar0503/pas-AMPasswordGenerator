@@ -32,6 +32,9 @@ type
     MenuItemInfo: TMenuItem;
     MenuItemAbout: TMenuItem;
     NumChars: TSpinEdit;
+    procedure NumChars4Click(Sender: TObject);
+    procedure NumChars8Click(Sender: TObject);
+    procedure NumChars12Click(Sender: TObject);
   private
 
   public
@@ -47,6 +50,21 @@ implementation
 
 { TMainForm }
 
+
+procedure TMainForm.NumChars4Click(Sender: TObject);
+begin
+  NumChars.Value:= 4;
+end;
+
+procedure TMainForm.NumChars8Click(Sender: TObject);
+begin
+  NumChars.Value:= 8;
+end;
+
+procedure TMainForm.NumChars12Click(Sender: TObject);
+begin
+  NumChars.Value:= 12;
+end;
 
 end.
 

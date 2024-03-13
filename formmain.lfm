@@ -35,6 +35,7 @@ object MainForm: TMainForm
       Top = 65
       Width = 72
       Caption = '4'
+      OnClick = NumChars4Click
       TabOrder = 1
     end
     object NumChars8: TButton
@@ -43,6 +44,7 @@ object MainForm: TMainForm
       Top = 65
       Width = 72
       Caption = '8'
+      OnClick = NumChars8Click
       TabOrder = 2
     end
     object NumChars12: TButton
@@ -51,6 +53,7 @@ object MainForm: TMainForm
       Top = 65
       Width = 72
       Caption = '12'
+      OnClick = NumChars12Click
       TabOrder = 3
     end
   end
