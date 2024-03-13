@@ -32,7 +32,6 @@ type
     MenuItemInfo: TMenuItem;
     MenuItemAbout: TMenuItem;
     NumChars: TSpinEdit;
-    procedure MenuItem1Click(Sender: TObject);
   private
 
   public
