@@ -135,6 +135,7 @@ object MainForm: TMainForm
       Width = 282
       Anchors = [akLeft, akRight, akBottom]
       Caption = 'Сгенерировать'
+      OnClick = PasswordButttonClick
       TabOrder = 1
     end
   end
