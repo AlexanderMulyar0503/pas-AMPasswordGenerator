@@ -7,6 +7,8 @@ object MainForm: TMainForm
   ClientHeight = 531
   ClientWidth = 350
   Menu = MainFormMenu
+  OnClose = FormClose
+  OnCreate = FormCreate
   LCLVersion = '2.0.10.0'
   object GroupNum: TGroupBox
     Left = 16
@@ -153,6 +155,7 @@ object MainForm: TMainForm
       end
       object MenuItemExit: TMenuItem
         Caption = 'Выход'
+        OnClick = MenuItemExitClick
       end
     end
     object MenuItemInfo: TMenuItem

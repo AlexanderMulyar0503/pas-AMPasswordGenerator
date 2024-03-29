@@ -8,6 +8,7 @@ object AboutForm: TAboutForm
   ClientWidth = 480
   Font.Height = -13
   Font.Name = 'Sans'
+  Position = poMainFormCenter
   LCLVersion = '2.0.10.0'
   object ProgramName: TLabel
     Left = 16

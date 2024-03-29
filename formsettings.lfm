@@ -6,6 +6,8 @@ object SettingsForm: TSettingsForm
   Caption = 'Параметры'
   ClientHeight = 230
   ClientWidth = 455
+  OnClose = FormClose
+  Position = poMainFormCenter
   LCLVersion = '2.0.10.0'
   object GroupPosition: TGroupBox
     Left = 16
@@ -101,6 +103,7 @@ object SettingsForm: TSettingsForm
     Top = 184
     Width = 200
     Caption = 'По умолчанию'
+    OnClick = ButtonDefaultClick
     TabOrder = 2
   end
   object ButtonOK: TButton
@@ -109,6 +112,7 @@ object SettingsForm: TSettingsForm
     Top = 184
     Width = 95
     Caption = 'OK'
+    OnClick = ButtonOKClick
     TabOrder = 3
   end
   object ButtonCancel: TButton
@@ -117,6 +121,7 @@ object SettingsForm: TSettingsForm
     Top = 184
     Width = 95
     Caption = 'Отмена'
+    OnClick = ButtonCancelClick
     TabOrder = 4
   end
 end
