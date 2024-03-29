@@ -5,7 +5,7 @@ unit FormMain;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, StdCtrls, Spin, PasswordGenerator;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, StdCtrls, Spin, PasswordGenerator, FormAbout;
 
 type
 
@@ -32,6 +32,7 @@ type
     MenuItemInfo: TMenuItem;
     MenuItemAbout: TMenuItem;
     NumChars: TSpinEdit;
+    procedure MenuItemAboutClick(Sender: TObject);
     procedure NumChars4Click(Sender: TObject);
     procedure NumChars8Click(Sender: TObject);
     procedure NumChars12Click(Sender: TObject);
@@ -51,6 +52,10 @@ implementation
 
 { TMainForm }
 
+procedure TMainForm.MenuItemAboutClick(Sender: TObject);
+begin
+  AboutForm.ShowModal;
+end;
 
 procedure TMainForm.NumChars4Click(Sender: TObject);
 begin
