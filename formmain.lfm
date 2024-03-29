@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 394
+  Left = 400
   Height = 560
-  Top = 234
+  Top = 240
   Width = 350
   Caption = 'AMPasswordGenerator'
   ClientHeight = 531
@@ -146,6 +146,7 @@ object MainForm: TMainForm
       Caption = 'Файл'
       object MenuItemSettings: TMenuItem
         Caption = 'Параметры'
+        OnClick = MenuItemSettingsClick
       end
       object MenuItemSep1: TMenuItem
         Caption = '-'

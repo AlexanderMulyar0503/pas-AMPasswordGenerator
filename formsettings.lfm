@@ -1,0 +1,122 @@
+object SettingsForm: TSettingsForm
+  Left = 385
+  Height = 230
+  Top = 246
+  Width = 455
+  Caption = 'Параметры'
+  ClientHeight = 230
+  ClientWidth = 455
+  LCLVersion = '2.0.10.0'
+  object GroupPosition: TGroupBox
+    Left = 16
+    Height = 153
+    Top = 15
+    Width = 200
+    Caption = 'Положение формы'
+    ClientHeight = 133
+    ClientWidth = 198
+    TabOrder = 0
+    object LabelPositionX: TLabel
+      Left = 24
+      Height = 17
+      Top = 24
+      Width = 8
+      Caption = 'X'
+      ParentColor = False
+    end
+    object LabelPositionY: TLabel
+      Left = 24
+      Height = 17
+      Top = 88
+      Width = 8
+      Caption = 'Y'
+      ParentColor = False
+    end
+    object PositionX: TSpinEdit
+      Left = 96
+      Height = 28
+      Top = 24
+      Width = 90
+      MaxValue = 8000
+      TabOrder = 0
+      Value = 25
+    end
+    object PositionY: TSpinEdit
+      Left = 96
+      Height = 28
+      Top = 88
+      Width = 90
+      MaxValue = 8000
+      TabOrder = 1
+      Value = 25
+    end
+  end
+  object GroupSize: TGroupBox
+    Left = 240
+    Height = 152
+    Top = 16
+    Width = 200
+    Caption = 'Размер формы'
+    ClientHeight = 132
+    ClientWidth = 198
+    TabOrder = 1
+    object SizeWidth: TSpinEdit
+      Left = 96
+      Height = 28
+      Top = 23
+      Width = 90
+      MaxValue = 8000
+      TabOrder = 0
+      Value = 350
+    end
+    object SizeHeight: TSpinEdit
+      Left = 96
+      Height = 28
+      Top = 87
+      Width = 90
+      MaxValue = 8000
+      TabOrder = 1
+      Value = 560
+    end
+    object LabelSizeWidth: TLabel
+      Left = 21
+      Height = 17
+      Top = 24
+      Width = 56
+      Caption = 'Ширина'
+      ParentColor = False
+    end
+    object LabelSizeHeight: TLabel
+      Left = 21
+      Height = 17
+      Top = 87
+      Width = 46
+      Caption = 'Высота'
+      ParentColor = False
+    end
+  end
+  object ButtonDefault: TButton
+    Left = 16
+    Height = 32
+    Top = 184
+    Width = 200
+    Caption = 'По умолчанию'
+    TabOrder = 2
+  end
+  object ButtonOK: TButton
+    Left = 240
+    Height = 32
+    Top = 184
+    Width = 95
+    Caption = 'OK'
+    TabOrder = 3
+  end
+  object ButtonCancel: TButton
+    Left = 345
+    Height = 33
+    Top = 184
+    Width = 95
+    Caption = 'Отмена'
+    TabOrder = 4
+  end
+end
