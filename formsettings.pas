@@ -50,7 +50,7 @@ procedure TSettingsForm.ButtonDefaultClick(Sender: TObject);
 var
   IniFile: TIniFile;
 begin
-  IniFile:= TIniFile.Create('app.ini');
+  IniFile:= TIniFile.Create(GetUserDir + '/.ampasswordgenerator.ini');
   IniFile.WriteInteger('Position', 'X', 25);
   IniFile.WriteInteger('Position', 'Y', 25);
   IniFile.WriteInteger('Size', 'Width', 350);
@@ -63,7 +63,7 @@ procedure TSettingsForm.ButtonOKClick(Sender: TObject);
 var
   IniFile: TIniFile;
 begin
-  IniFile:= TIniFile.Create('app.ini');
+  IniFile:= TIniFile.Create(GetUserDir + '/.ampasswordgenerator.ini');
   IniFile.WriteInteger('Position', 'X', PositionX.Value);
   IniFile.WriteInteger('Position', 'Y', PositionY.Value);
   IniFile.WriteInteger('Size', 'Width', SizeWidth.Value);
@@ -81,7 +81,7 @@ procedure TSettingsForm.ButtonCancelClick(Sender: TObject);
 var
   IniFile: TIniFile;
 begin
-  IniFile:= TIniFile.Create('app.ini');
+  IniFile:= TIniFile.Create(GetUserDir + '/.ampasswordgenerator.ini');
   IniFile.WriteInteger('Position', 'X', CancelPositionX);
   IniFile.WriteInteger('Position', 'Y', CancelPositionY);
   IniFile.WriteInteger('Size', 'Width', CancelSizeWidth);

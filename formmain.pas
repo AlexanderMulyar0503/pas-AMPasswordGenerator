@@ -60,9 +60,9 @@ procedure TMainForm.FormCreate(Sender: TObject);
 var
   IniFile: TIniFile;
 begin
-  if FileExists('app.ini') = False then
+  if FileExists(GetUserDir + '/.ampasswordgenerator.ini') = False then
     begin
-      IniFile:= TIniFile.Create('app.ini');
+      IniFile:= TIniFile.Create(GetUserDir + '/.ampasswordgenerator.ini');
       IniFile.WriteInteger('Position', 'X', 25);
       IniFile.WriteInteger('Position', 'Y', 25);
       IniFile.WriteInteger('Size', 'Width', 350);
@@ -70,7 +70,7 @@ begin
       IniFile.Free;
     end;
 
-    IniFile:= TIniFile.Create('app.ini');
+    IniFile:= TIniFile.Create(GetUserDir + '/.ampasswordgenerator.ini');
     MainForm.Left:= IniFile.ReadInteger('Position', 'X', 25);
     MainForm.Top:= IniFile.ReadInteger('Position', 'Y', 25);
     MainForm.Width:= IniFile.ReadInteger('Size', 'Width', 350);
@@ -82,7 +82,7 @@ procedure TMainForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 var
   IniFile: TIniFile;
 begin
-  IniFile:= TIniFile.Create('app.ini');
+  IniFile:= TIniFile.Create(GetUserDir + '/.ampasswordgenerator.ini');
   IniFile.WriteInteger('Position', 'X', MainForm.Left);
   IniFile.WriteInteger('Position', 'Y', MainForm.Top);
   IniFile.WriteInteger('Size', 'Width', MainForm.Width);
@@ -116,7 +116,7 @@ begin
 
   SettingsForm.ShowModal;
 
-  IniFile:= TIniFile.Create('app.ini');
+  IniFile:= TIniFile.Create(GetUserDir + '/.ampasswordgenerator.ini');
   MainForm.Left:= IniFile.ReadInteger('Position', 'X', 25);
   MainForm.Top:= IniFile.ReadInteger('Position', 'Y', 25);
   MainForm.Width:= IniFile.ReadInteger('Size', 'Width', 350);
