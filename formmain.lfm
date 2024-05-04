@@ -17,14 +17,14 @@ object MainForm: TMainForm
     Width = 320
     Anchors = [akTop, akLeft, akRight]
     Caption = 'Количество символов'
-    ClientHeight = 107
-    ClientWidth = 316
+    ClientHeight = 108
+    ClientWidth = 318
     TabOrder = 0
     object NumChars: TSpinEdit
       Left = 16
-      Height = 26
+      Height = 28
       Top = 24
-      Width = 280
+      Width = 282
       Anchors = [akTop, akLeft, akRight]
       MaxValue = 255
       MinValue = 1
@@ -66,14 +66,14 @@ object MainForm: TMainForm
     Width = 320
     Anchors = [akTop, akLeft, akRight]
     Caption = 'Типы символов'
-    ClientHeight = 179
-    ClientWidth = 316
+    ClientHeight = 180
+    ClientWidth = 318
     TabOrder = 1
     object TypeCharUp: TCheckBox
       Left = 16
-      Height = 23
+      Height = 21
       Top = 24
-      Width = 186
+      Width = 187
       Caption = 'Буквы (верхний регистр)'
       Checked = True
       State = cbChecked
@@ -81,9 +81,9 @@ object MainForm: TMainForm
     end
     object TypeCharLow: TCheckBox
       Left = 16
-      Height = 23
+      Height = 21
       Top = 64
-      Width = 183
+      Width = 184
       Caption = 'Буквы (нижний регистр)'
       Checked = True
       State = cbChecked
@@ -91,9 +91,9 @@ object MainForm: TMainForm
     end
     object TypeDigit: TCheckBox
       Left = 16
-      Height = 23
+      Height = 21
       Top = 101
-      Width = 70
+      Width = 71
       Caption = 'Цифры'
       Checked = True
       State = cbChecked
@@ -101,9 +101,9 @@ object MainForm: TMainForm
     end
     object TypeSpChar: TCheckBox
       Left = 16
-      Height = 23
+      Height = 21
       Top = 144
-      Width = 176
+      Width = 177
       Caption = 'Специальные символы'
       Checked = True
       State = cbChecked
@@ -117,14 +117,14 @@ object MainForm: TMainForm
     Width = 320
     Anchors = [akLeft, akRight, akBottom]
     Caption = 'Пароль'
-    ClientHeight = 115
-    ClientWidth = 316
+    ClientHeight = 116
+    ClientWidth = 318
     TabOrder = 2
     object PasswordEdit: TEdit
       Left = 16
-      Height = 26
-      Top = 25
-      Width = 280
+      Height = 30
+      Top = 22
+      Width = 282
       Anchors = [akLeft, akRight, akBottom]
       ReadOnly = True
       TabOrder = 0
@@ -133,8 +133,8 @@ object MainForm: TMainForm
     object PasswordButtton: TButton
       Left = 16
       Height = 32
-      Top = 63
-      Width = 280
+      Top = 64
+      Width = 282
       Anchors = [akLeft, akRight, akBottom]
       Caption = 'Сгенерировать'
       OnClick = PasswordButttonClick
