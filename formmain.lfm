@@ -147,7 +147,7 @@ object MainForm: TMainForm
     object MenuItemFile: TMenuItem
       Caption = 'Файл'
       object MenuItemSettings: TMenuItem
-        Caption = 'Параметры'
+        Caption = 'Параметры по умолчанию'
         OnClick = MenuItemSettingsClick
       end
       object MenuItemSep1: TMenuItem

@@ -7,8 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, FormMain, PasswordGenerator, FormAbout, FormSettings
-  { you can add units after this };
+  Forms, FormMain, PasswordGenerator, FormAbout;
 
 {$R *.res}
 
@@ -18,7 +17,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
   Application.CreateForm(TAboutForm, AboutForm);
-  Application.CreateForm(TSettingsForm, SettingsForm);
   Application.Run;
 end.
 

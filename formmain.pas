@@ -5,7 +5,7 @@ unit FormMain;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, StdCtrls, Spin, PasswordGenerator, FormAbout, FormSettings, IniFiles;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, Menus, StdCtrls, Spin, PasswordGenerator, FormAbout, IniFiles;
 
 type
 
@@ -49,6 +49,7 @@ type
 
 var
   MainForm: TMainForm;
+  IniFile: TIniFile;
 
 implementation
 
@@ -57,37 +58,19 @@ implementation
 { TMainForm }
 
 procedure TMainForm.FormCreate(Sender: TObject);
-var
-  IniFile: TIniFile;
 begin
-  if FileExists(GetUserDir + DirectorySeparator + '.ampasswordgenerator.ini') = False then
-    begin
-      IniFile:= TIniFile.Create(GetUserDir + DirectorySeparator + '.ampasswordgenerator.ini');
-      IniFile.WriteInteger('Position', 'X', 25);
-      IniFile.WriteInteger('Position', 'Y', 25);
-      IniFile.WriteInteger('Size', 'Width', 350);
-      IniFile.WriteInteger('Size', 'Height', 560);
-      IniFile.Free;
-    end;
-
-    IniFile:= TIniFile.Create(GetUserDir + DirectorySeparator + '.ampasswordgenerator.ini');
     MainForm.Left:= IniFile.ReadInteger('Position', 'X', 25);
     MainForm.Top:= IniFile.ReadInteger('Position', 'Y', 25);
     MainForm.Width:= IniFile.ReadInteger('Size', 'Width', 350);
     MainForm.Height:= IniFile.ReadInteger('Size', 'Height', 560);
-    IniFile.Free;
 end;
 
 procedure TMainForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
-var
-  IniFile: TIniFile;
 begin
-  IniFile:= TIniFile.Create(GetUserDir + DirectorySeparator + '.ampasswordgenerator.ini');
   IniFile.WriteInteger('Position', 'X', MainForm.Left);
   IniFile.WriteInteger('Position', 'Y', MainForm.Top);
   IniFile.WriteInteger('Size', 'Width', MainForm.Width);
   IniFile.WriteInteger('Size', 'Height', MainForm.Height);
-  IniFile.Free;
 end;
 
 procedure TMainForm.MenuItemAboutClick(Sender: TObject);
@@ -101,27 +84,16 @@ begin
 end;
 
 procedure TMainForm.MenuItemSettingsClick(Sender: TObject);
-var
-  IniFile: TIniFile;
 begin
-  CancelPositionX:= MainForm.Left;
-  CancelPositionY:= MainForm.Top;
-  CancelSizeWidth:= MainForm.Width;
-  CancelSizeHeight:= MainForm.Height;
+  IniFile.WriteInteger('Position', 'X', 25);
+  IniFile.WriteInteger('Position', 'Y', 25);
+  IniFile.WriteInteger('Size', 'Width', 350);
+  IniFile.WriteInteger('Size', 'Height', 560);
 
-  SettingsForm.PositionX.Value:= MainForm.Left;
-  SettingsForm.PositionY.Value:= MainForm.Top;
-  SettingsForm.SizeWidth.Value:= MainForm.Width;
-  SettingsForm.SizeHeight.Value:= MainForm.Height;
-
-  SettingsForm.ShowModal;
-
-  IniFile:= TIniFile.Create(GetUserDir + DirectorySeparator + '.ampasswordgenerator.ini');
   MainForm.Left:= IniFile.ReadInteger('Position', 'X', 25);
   MainForm.Top:= IniFile.ReadInteger('Position', 'Y', 25);
   MainForm.Width:= IniFile.ReadInteger('Size', 'Width', 350);
   MainForm.Height:= IniFile.ReadInteger('Size', 'Height', 560);
-  IniFile.Free;
 end;
 
 procedure TMainForm.NumChars4Click(Sender: TObject);
@@ -146,6 +118,27 @@ begin
   else
     PasswordEdit.Text:= GetPasswordString(TypeCharUp.Checked, TypeCharLow.Checked, TypeDigit.Checked, TypeSpChar.Checked, NumChars.Value);
 end;
+
+
+initialization
+
+if FileExists(GetUserDir + DirectorySeparator + '.ampasswordgenerator.ini') = False then
+begin
+  IniFile:= TIniFile.Create(GetUserDir + DirectorySeparator + '.ampasswordgenerator.ini');
+  IniFile.WriteInteger('Position', 'X', 25);
+  IniFile.WriteInteger('Position', 'Y', 25);
+  IniFile.WriteInteger('Size', 'Width', 350);
+  IniFile.WriteInteger('Size', 'Height', 560);
+  IniFile.Free;
+end;
+
+IniFile:= TIniFile.Create(GetUserDir + DirectorySeparator + '.ampasswordgenerator.ini');
+
+
+finalization
+
+IniFile.Free;
+
 
 end.
 
